@@ -17,6 +17,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -25,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth auth;
     Toolbar toolbar;
     ProgressBar progressBar;
+
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +76,30 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                                finish();
+
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+
+                                databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                                //adding values to a hashMap
+                                HashMap<String,String> hashValues = new HashMap<>();
+                                hashValues.put("name",displayName.getText().toString());
+                                hashValues.put("status","Hey there! I'm using VChat");
+                                hashValues.put("image","default");
+                                hashValues.put("thumb_image","default");
+
+                                //adding values to the databaseReference
+                                databaseReference.setValue(hashValues).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    }
+                                });
                             }
                             else {
                                 Toast.makeText(RegisterActivity.this,"Some error occurred! Please try again.",Toast.LENGTH_SHORT).show();
