@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "527805145007",
+    "firebase_url": "https://lapitchat-e419f.firebaseio.com",
+    "project_id": "lapitchat-e419f",
+    "storage_bucket": "lapitchat-e419f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527805145007:android:fee471ffc55d5a58",
+        "android_client_info": {
+          "package_name": "com.example.vchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527805145007-op1aj1f3jrgmleke32jhmmvajqtco27o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vchat",
+            "certificate_hash": "f980241758b236df0faccab272c880dcbde5815e"
+          }
+        },
+        {
+          "client_id": "527805145007-nv708e1ntupqvopdhr0sj27eqrsfl1l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0j2M4-5r_4UsQn3_NUs9DZTHLrQmxb4E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527805145007-nv708e1ntupqvopdhr0sj27eqrsfl1l4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527805145007:android:1a80b8524cdcfc13",
+        "android_client_info": {
+          "package_name": "com.example.vibhu.lapitchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527805145007-umt8frrb4cvn44hbrlk9dr3m85qlq7vt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vibhu.lapitchat",
+            "certificate_hash": "f980241758b236df0faccab272c880dcbde5815e"
+          }
+        },
+        {
+          "client_id": "527805145007-nv708e1ntupqvopdhr0sj27eqrsfl1l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0j2M4-5r_4UsQn3_NUs9DZTHLrQmxb4E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527805145007-nv708e1ntupqvopdhr0sj27eqrsfl1l4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
